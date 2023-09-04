@@ -65,7 +65,7 @@
 
         const enterSymbol = (value) => {
             const lastChar = inp.value.charAt(inp.value.length - 1);
-            if(value == '='){
+            if(value == '=' && inp.value.length > 0){
                 inp.value = eval(inp.value);
             }else if (inp.value !== '' && !['-', '+', '*', '/'].includes(lastChar) || inp.value == '' && value == '-') {
                 inp.value += value;
