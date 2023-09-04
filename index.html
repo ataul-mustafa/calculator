@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="style.css">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <section class="mainContainer">
+        <h1>Calculator</h1>
+        <div class="calcBox">
+            <div class="display">
+                <input type="text" name="disp" id="disp">
+            </div>
+            <div class="keyPad">
+                <div class="row1">
+                    <button onclick="document.getElementById('disp').value += '7' ">7</button>
+                    <button onclick="document.getElementById('disp').value += '8' ">8</button>
+                    <button onclick="document.getElementById('disp').value += '9' ">9</button>
+                    <button style="background-color: rgb(74, 127, 241); color: #fff;" onclick="document.getElementById('disp').value = document.getElementById('disp').value.toString().slice(0, -1)">DEL</button>
+                </div>
+                <div class="row2">
+                    <button onclick="document.getElementById('disp').value += '4' ">4</button>
+                    <button onclick="document.getElementById('disp').value += '5' ">5</button>
+                    <button onclick="document.getElementById('disp').value += '6' ">6</button>
+                    <button onclick="enterSymbol('+')">+</button>
+                </div>
+                <div class="row3">
+                    <button onclick="document.getElementById('disp').value += '1' ">1</button>
+                    <button onclick="document.getElementById('disp').value += '2' ">2</button>
+                    <button onclick="document.getElementById('disp').value += '3' ">3</button>
+                    <button onclick="enterSymbol('-')">-</button>
+                </div>
+                <div class="row4">
+                    <button onclick="controlDecimal('.')">.</button>
+                    <button onclick="document.getElementById('disp').value += '0' ">0</button>
+                    <button onclick="enterSymbol('*')">/</button>
+                    <button onclick="enterSymbol('*')">X</button>
+                </div>
+                <div class="row5">
+                    <button style="background-color: rgb(74, 127, 241); color: #fff;"
+                        onclick="document.getElementById('disp').value = '' ">RESET</button>
+                    <button style="background-color: brown; color: #fff;" onclick="enterSymbol('=')">=</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const inp = document.getElementById('disp');
+
+        const controlDecimal = (value) => {
+
+            const inpValue = inp.value;
+
+            const last = inpValue.charAt(inpValue.length - 1)
+            if(last !== value){
+                    inp.value += value;
+                }
+           }
+
+        const enterSymbol = (value) => {
+            const lastChar = inp.value.charAt(inp.value.length - 1);
+            if(value == '='){
+                inp.value = eval(inp.value);
+            }else if (inp.value !== '' && !['-', '+', '*', '/'].includes(lastChar) || inp.value == '' && value == '-') {
+                inp.value += value;
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>
