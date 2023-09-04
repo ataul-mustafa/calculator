@@ -90,12 +90,16 @@
 
 @media screen and (max-width: 600px) {
 
+    .mainContainer > .calcBox input {
+        height: 130px;
+    }
+
     .mainContainer > h1 {
         display: none;
     }
 
     .mainContainer > .calcBox {
         width: 100%;
-        height: 75%;
+        height: 60%;
     }
 }
