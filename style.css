@@ -69,14 +69,14 @@
 .mainContainer > .calcBox > .keyPad > div > button {
     height: 50px;
     width: 22%;
-    background-color: #fff;
+    background-color: #ece2e2;
     font-size: 22px;
     font-weight: 600;
     border: none;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.5), -3px -3px 5px 5px rgba(255, 255, 255, 0.575);
+    box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.575), -0.5px -0.5px 3px 5px rgba(255, 255, 255), 10px 10px 35px 5px rgba(0, 0, 0, 0.438) inset;
     transition: 0.1s ease;
 }
 
